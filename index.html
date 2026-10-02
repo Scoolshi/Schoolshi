@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCHOOLSHI MADENİ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Üst Bar (Header) -->
+    <header class="navbar">
+        <div class="nav-left">
+            <img src="logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="nav-center">
+            <h1>SCHOOLSHI MADENİ</h1>
+        </div>
+        <div class="nav-right">
+            <button class="menu-btn" id="menuToggle" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Yan Menü (Sidebar) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#" class="nav-link" data-page="home">Ana Menü</a></li>
+            <li><a href="#" class="nav-link" data-page="about">Hakkımızda</a></li>
+            <li><a href="#" class="nav-link" data-page="buy">Ürün Al</a></li>
+            <li><a href="#" class="nav-link" data-page="stats">İstatistik</a></li>
+            <li><a href="#" class="nav-link" data-page="thanks">Teşekkürler</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sayfa İçerikleri -->
+    <main class="content-container">
+        
+        <!-- 1. ANA SAYFA -->
+        <section id="page-home" class="page active">
+            <h2>Hoş Geldiniz</h2>
+            <p>SCHOOLSHI MADENİ ana sayfasına hoş geldiniz. Menüden dilediğiniz bölüme geçiş yapabilirsiniz.</p>
+            
+            <!-- YENİ NELER VAR? PENCERESİ -->
+            <div class="news-box">
+                <h3>YENİ NELER VAR?</h3>
+                <hr class="divider">
+                <div class="news-content">
+                    <p>Buraya yeni duyurular ve haberler eklenecektir.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. HAKKIMIZDA SAYFASI -->
+        <section id="page-about" class="page">
+            <h2>Hakkımızda</h2>
+            <p>Schoolshi madeninde ürünlerimizi sipariş edebilirsiniz.</p>
+            <hr class="divider">
+            <h3>İletişim Bilgileri</h3>
+            <p><strong>E-posta:</strong> schoolshiiletisim@gmail.com</p>
+        </section>
+
+        <!-- 3. ÜRÜN AL SAYFASI -->
+        <section id="page-buy" class="page">
+            <h2>Ürün Kataloğu</h2>
+            
+            <div class="products-grid">
+                <!-- Snickers Kartı -->
+                <div class="product-card">
+                    <img src="snickers.png" alt="Snickers" class="product-img">
+                    <h3>Snickers</h3>
+                    <p class="price">20 ₺</p>
+                    <div class="quantity-controls">
+                        <button class="btn-qty" onclick="changeQuantity('snickers', -1)">1 Çıkar</button>
+                        <span class="qty-count" id="count-snickers">0</span>
+                        <button class="btn-qty" onclick="changeQuantity('snickers', 1)">1 Ekle</button>
+                    </div>
+                </div>
+
+                <!-- Butter Kartı -->
+                <div class="product-card">
+                    <img src="butter.png" alt="Butter" class="product-img">
+                    <h3>BUTTER</h3>
+                    <p class="price">30 ₺</p>
+                    <div class="quantity-controls">
+                        <button class="btn-qty" onclick="changeQuantity('butter', -1)">1 Çıkar</button>
+                        <span class="qty-count" id="count-butter">0</span>
+                        <button class="btn-qty" onclick="changeQuantity('butter', 1)">1 Ekle</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sepet Penceresi -->
+            <div class="cart-box">
+                <h2>SEPET</h2>
+                <div class="cart-details">
+                    <div class="cart-item">
+                        <span>Snickers (<span id="cart-qty-snickers">0</span> adet)</span>
+                        <span id="cart-total-snickers">0 ₺</span>
+                    </div>
+                    <div class="cart-item">
+                        <span>BUTTER (<span id="cart-qty-butter">0</span> adet)</span>
+                        <span id="cart-total-butter">0 ₺</span>
+                    </div>
+                    <hr class="divider">
+                    <div class="cart-item total-price">
+                        <span>Toplam Tutar:</span>
+                        <span id="cart-grand-total">0 ₺</span>
+                    </div>
+                </div>
+                <button class="checkout-btn" id="goToCheckoutBtn">Ürün Al</button>
+            </div>
+        </section>
+
+        <!-- 4. İSTATİSTİK SAYFASI -->
+        <section id="page-stats" class="page">
+            <h2>İstatistikler</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Satılan Ürünler</h3>
+                    <span class="stat-value" id="val-sold">8</span>
+                </div>
+                <div class="stat-card good">
+                    <h3>İyi Yorumlar</h3>
+                    <span class="stat-value" id="val-good">3</span>
+                </div>
+                <div class="stat-card bad">
+                    <h3>Kötü Yorumlar</h3>
+                    <span class="stat-value" id="val-bad">0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. TEŞEKKÜRLER SAYFASI -->
+        <section id="page-thanks" class="page">
+            <h2>Teşekkürler</h2>
+            <div class="thanks-box">
+                <p><strong>Site Yapımcısı:</strong> WDDelta</p>
+                <p><strong>Yönetim:</strong> WDDelta, LeixTK, Coolspace</p>
+                <hr class="divider">
+                <p class="thanks-footer">Sitemizi ziyaret ettiğiniz için size de teşekkürler.</p>
+            </div>
+        </section>
+
+        <!-- 6. ÖDEME / SATIN ALMA SAYFASI -->
+        <section id="page-checkout" class="page">
+            <h2>Satın Alma İşlemi</h2>
+            <p>Seçtiğiniz ürünlerin sipariş tamamlama aşamasına geldiniz.</p>
+            
+            <div id="checkout-summary" class="checkout-summary"></div>
+
+            <form id="checkout-form" class="checkout-form">
+                <div class="form-group">
+                    <label for="cust-name">Adınız Soyadınız:</label>
+                    <input type="text" id="cust-name" required placeholder="Örn: Ahmet Yılmaz">
+                </div>
+
+                <div class="form-group">
+                    <label for="cust-contact">İletişim Bilgileriniz (Telefon / E-posta):</label>
+                    <input type="text" id="cust-contact" required placeholder="Örn: 05xx xxx xx xx">
+                </div>
+
+                <div class="form-group">
+                    <label for="cust-message">Özel Mesaj veya Notunuz:</label>
+                    <textarea id="cust-message" rows="4" placeholder="Eklemek istediğiniz not..."></textarea>
+                </div>
+
+                <button type="submit" class="checkout-btn">Siparişi Onayla ve Gönder</button>
+            </form>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
