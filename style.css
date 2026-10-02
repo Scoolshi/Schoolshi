@@ -150,6 +150,34 @@ body {
     font-size: 0.95rem;
 }
 
+/* Bilgilendirme Kutusu (#BUNU OKU#) */
+.info-box {
+    background-color: #1c2541;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #ff2a75;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.info-box h3 {
+    color: #ff2a75;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.info-box h4 {
+    color: #ffffff;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    color: #a0aec0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
 /* Teşekkürler Sayfası Kutusu */
 .thanks-box {
     background-color: #1c2541;
