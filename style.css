@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b132b;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+/* Üst Bar (Header) */
+.navbar {
+    background-color: #ff2a75;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    display: block;
+}
+
+.nav-center h1 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.menu-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.menu-btn span {
+    width: 20px;
+    height: 3px;
+    background-color: #ff2a75;
+    border-radius: 2px;
+}
+
+/* Yan Menü (Sidebar) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 250px;
+    height: 100%;
+    background-color: #1c2541;
+    z-index: 1000;
+    transition: right 0.3s ease;
+    padding-top: 60px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 15px 25px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #3a506b;
+    transition: background 0.2s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #ff2a75;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: none;
+}
+
+.sidebar-overlay.active {
+    display: block;
+}
+
+/* İçerik Alanı ve Sayfa Yapısı */
+.content-container {
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.divider {
+    margin: 15px 0;
+    border: 0;
+    height: 1px;
+    background: #3a506b;
+}
+
+/* Yeni Neler Var Kutusu */
+.news-box {
+    background-color: #1c2541;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #ff2a75;
+    margin-top: 20px;
+}
+
+.news-box h3 {
+    color: #ff2a75;
+}
+
+.news-content {
+    color: #a0aec0;
+    font-size: 0.95rem;
+}
+
+/* Teşekkürler Sayfası Kutusu */
+.thanks-box {
+    background-color: #1c2541;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #ff2a75;
+    margin-top: 15px;
+}
+
+.thanks-box p {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+.thanks-footer {
+    color: #ff2a75;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Ürün Kartları */
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.product-card {
+    background-color: #1c2541;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #ff2a75;
+    text-align: center;
+}
+
+.product-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-size: 1.1rem;
+    color: #ff2a75;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.quantity-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-qty {
+    background-color: #ff2a75;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-qty:active {
+    transform: scale(0.95);
+}
+
+.qty-count {
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-width: 25px;
+}
+
+/* Sepet Penceresi */
+.cart-box {
+    background-color: #1c2541;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #ff2a75;
+    margin-top: 20px;
+}
+
+.cart-box h2 {
+    color: #ff2a75;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.total-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff2a75;
+}
+
+.checkout-btn {
+    width: 100%;
+    background-color: #ff2a75;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background-color: #e02465;
+}
+
+.checkout-summary {
+    background-color: #1c2541;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Ödeme Formu Stilleri */
+.checkout-form {
+    background-color: #1c2541;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #a0aec0;
+    font-weight: bold;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #0b132b;
+    border: 1px solid #3a506b;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff2a75;
+}
+
+/* İstatistik Kartları */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    background-color: #1c2541;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #ff2a75;
+    text-align: center;
+}
+
+.stat-card.good {
+    border-left-color: #00b4d8;
+}
+
+.stat-card.bad {
+    border-left-color: #e63946;
+}
+
+.stat-card h3 {
+    font-size: 1rem;
+    color: #a0aec0;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+}
